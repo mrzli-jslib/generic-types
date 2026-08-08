@@ -1,0 +1,35 @@
+{
+  "name": "@mrzli-jslib/generic-types",
+  "version": "0.0.0",
+  "description": "Generic types for TypeScript",
+  "homepage": "https://github.com/mrzli-jslib/generic-types#readme",
+  "bugs": {
+    "url": "https://github.com/mrzli-jslib/generic-types/issues"
+  },
+  "license": "MIT",
+  "author": "Goran Mržljak <goran.mrzljak@mail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrzli-jslib/generic-types.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "preflight": "bun run typecheck && bun run build",
+    "prepare": "bun run build"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2"
+  }
+}

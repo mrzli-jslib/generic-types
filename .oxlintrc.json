@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [".setup/**"],
+  "plugins": ["eslint", "typescript", "oxc", "unicorn", "import", "promise", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "vitest/valid-title": [
+      "warn",
+      {
+        "allowArguments": true
+      }
+    ]
+  }
+}
