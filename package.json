@@ -25,10 +25,18 @@
     "build": "tsdown",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
-    "preflight": "bun run typecheck && bun run build",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fix": "bun run fmt && bun run lint:fix",
+    "check": "bun run fmt:check && bun run lint",
+    "preflight": "bun run typecheck && bun run check && bun run build",
     "prepare": "bun run build"
   },
   "devDependencies": {
+    "oxfmt": "^0.62.0",
+    "oxlint": "^1.77.0",
     "tsdown": "^0.22.14",
     "typescript": "^7.0.2"
   }
